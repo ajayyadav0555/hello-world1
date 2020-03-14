@@ -1,10 +1,11 @@
 from Tkinter import *
 import math
 
-class calc:
+class Calc:
+#creating function
  def getandreplace(self):
   """replace x with * and ÷ with /"""
-  
+ #creating object 
   self.expression = self.e.get()
   self.newtext=self.expression.replace(self.newdiv,'/')
   self.newtext=self.newtext.replace('x','*')
@@ -74,7 +75,7 @@ class calc:
   self.div='÷'
   self.newdiv=self.div.decode('utf-8')
 
-  #Generating Buttons
+  #Generating Buttons for calculator
   Button(master,text="=",width=10,command=lambda:self.equals()).grid(row=4, column=4,columnspan=2)
   Button(master,text='AC',width=3,command=lambda:self.clearall()).grid(row=1, column=4)
   Button(master,text='C',width=3,command=lambda:self.clear1()).grid(row=1, column=5)
@@ -100,5 +101,5 @@ class calc:
   Button(master,text="x²",width=3,command=lambda:self.square()).grid(row=3, column=5)
 #Main
 root = Tk()
-obj=calc(root) #object instantiated
+obj=Calc(root) #object instantiated
 root.mainloop()
